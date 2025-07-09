@@ -13,15 +13,15 @@ namespace E_Agenda.WebApp.Controllers;
 [Route("despesas")]
 public class DespesaController : Controller
 {
-    private readonly ContextoDados contexto;
+    private readonly ContextoDados contextoDados;
     private readonly IRepositorioDespesa repositorioDespesa;
     private readonly IRepositorioCategoria repositorioCategoria;
 
-    public DespesaController()
+    public DespesaController(ContextoDados contextoDados, IRepositorioDespesa repositorioDespesa, IRepositorioCategoria repositorioCategoria)
     {
-        contexto = new(true);
-        repositorioDespesa = new RepositorioDespesa(contexto);
-        repositorioCategoria = new RepositorioCategoria(contexto);
+        this.contextoDados = contextoDados;
+        this.repositorioDespesa =  repositorioDespesa;
+        this.repositorioCategoria =  repositorioCategoria;
     }
 
     public IActionResult Index()
@@ -75,7 +75,7 @@ public class DespesaController : Controller
         foreach (var c in entidade.Categorias)
             c.AdicionarDespesa(entidade);
 
-        contexto.Salvar();
+        contextoDados.Salvar();
 
         return RedirectToAction(nameof(Index));
 
@@ -132,7 +132,7 @@ public class DespesaController : Controller
         foreach (var c in entidadeEditada.Categorias)
             c.AdicionarDespesa(entidadeEditada);
 
-        contexto.Salvar();
+        contextoDados.Salvar();
 
         return RedirectToAction(nameof(Index));
     }

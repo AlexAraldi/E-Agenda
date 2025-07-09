@@ -2,7 +2,7 @@
 
 namespace E_Agenda.Dominio.ModuloTarefa;
 
-public class Item
+public class Item   //value object
 {
     public Guid Id { get; set; }
     public string Titulo { get; set; }

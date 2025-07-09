@@ -16,11 +16,11 @@ namespace E_Agenda.WebApp.Controllers
         private readonly IRepositorioContato repositorioContato;
         private readonly IRepositorioCompromisso repositoriocompromisso;
 
-        public ContatoController()
+        public ContatoController(ContextoDados contextoDados, IRepositorioContato repositorioContato, IRepositorioCompromisso repositorioCompromisso)
         {
-            contextoDados = new ContextoDados(true);
-            repositorioContato = new RepositorioContato(contextoDados);
-            repositoriocompromisso = new RepositorioCompromisso(contextoDados);
+            this.contextoDados = contextoDados;
+            this.repositorioContato = repositorioContato;
+            this.repositoriocompromisso =  repositorioCompromisso;
         }
 
         public IActionResult Index()

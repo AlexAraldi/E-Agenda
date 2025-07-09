@@ -10,13 +10,13 @@ namespace E_Agenda.WebApp.Controllers;
 [Route("categorias")]
 public class CategoriaController : Controller
 {
-    private readonly ContextoDados contexto;
+    private readonly ContextoDados contextoDados;
     private readonly IRepositorioCategoria repositorioCategoria;
 
-    public CategoriaController()
+    public CategoriaController(ContextoDados contextoDados, IRepositorioCategoria repositorioCategoria )
     {
-        contexto = new(true);
-        repositorioCategoria = new RepositorioCategoria(contexto);
+        this.contextoDados = contextoDados;
+        this.repositorioCategoria = repositorioCategoria;
     }
     public IActionResult Index()
     {

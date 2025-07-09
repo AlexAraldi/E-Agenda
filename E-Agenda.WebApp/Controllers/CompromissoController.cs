@@ -12,15 +12,15 @@ namespace E_Agenda.WebApp.Controllers;
 [Route("compromissos")]
 public class CompromissoController : Controller
 {
-    private readonly ContextoDados contexto;
+    private readonly ContextoDados contextoDados;
     private readonly IRepositorioCompromisso repositorioCompromisso;
     private readonly IRepositorioContato repositorioContato;
 
-    public CompromissoController()
+    public CompromissoController(ContextoDados contextoDados, IRepositorioCompromisso repositorioCompromisso, IRepositorioContato repositorioContato)
     {
-        contexto = new(true);
-        repositorioCompromisso = new RepositorioCompromisso(contexto);
-        repositorioContato = new RepositorioContato(contexto);
+        this.contextoDados = contextoDados;
+        this.repositorioCompromisso = repositorioCompromisso;
+        this.repositorioContato = repositorioContato;
     }
 
     [HttpGet]
