@@ -2,7 +2,7 @@
 using E_Agenda.Infraestrutura.Compartilhado;
 
 namespace E_Agenda.Infraestrutura.ModuloCompromissos;
-public class RepositorioCompromisso : RepositorioBase<Compromisso>, IRepositorioCompromisso
+public class RepositorioCompromisso : RepositorioBaseEmArquivos<Compromisso>, IRepositorioCompromisso
 {
     public RepositorioCompromisso(ContextoDados contexto) : base(contexto) { }
     protected override List<Compromisso> ObterRegistros()

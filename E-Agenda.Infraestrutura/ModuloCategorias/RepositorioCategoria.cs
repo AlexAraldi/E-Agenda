@@ -2,7 +2,7 @@
 using E_Agenda.Infraestrutura.Compartilhado;
 
 namespace E_Agenda.Infraestrutura.ModuloCategorias;
-public class RepositorioCategoria : RepositorioBase<Categoria>, IRepositorioCategoria
+public class RepositorioCategoria : RepositorioBaseEmArquivos<Categoria>, IRepositorioCategoria
 {
     public RepositorioCategoria(ContextoDados contexto) : base(contexto) { }
 

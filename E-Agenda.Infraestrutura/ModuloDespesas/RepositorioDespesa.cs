@@ -3,7 +3,7 @@ using E_Agenda.Infraestrutura.Compartilhado;
 
 
 namespace E_Agenda.Infraestrutura.ModuloDespesas;
-public class RepositorioDespesa : RepositorioBase<Despesa>, IRepositorioDespesa
+public class RepositorioDespesa : RepositorioBaseEmArquivos<Despesa>, IRepositorioDespesa
 {
     public RepositorioDespesa(ContextoDados contexto) : base(contexto) { }
 

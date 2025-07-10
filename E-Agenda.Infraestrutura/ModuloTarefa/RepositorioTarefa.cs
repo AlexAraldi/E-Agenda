@@ -2,7 +2,7 @@
 using E_Agenda.Infraestrutura.Compartilhado;
 
 namespace E_Agenda.Infraestrutura.ModuloTarefa;
-public class RepositorioTarefa : RepositorioBase<Tarefa>, IRepositorioTarefa
+public class RepositorioTarefa : RepositorioBaseEmArquivos<Tarefa>, IRepositorioTarefa
 {
     public RepositorioTarefa(ContextoDados contexto) : base(contexto) { }
 

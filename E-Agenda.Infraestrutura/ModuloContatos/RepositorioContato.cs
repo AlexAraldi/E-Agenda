@@ -3,7 +3,7 @@ using E_Agenda.Infraestrutura.Compartilhado;
 
 namespace E_Agenda.Infraestrutura.ModuloContatos;
 
-public class RepositorioContato : RepositorioBase<Contato>, IRepositorioContato
+public class RepositorioContato : RepositorioBaseEmArquivos<Contato>, IRepositorioContato
 {
     public RepositorioContato(ContextoDados contexto) : base(contexto) { }
 

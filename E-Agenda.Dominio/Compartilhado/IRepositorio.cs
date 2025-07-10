@@ -9,5 +9,5 @@ public interface IRepositorio<T> where T : EntidadeBase<T>
 
     public List<T> ObterTodos();
 
-    public T ObterPorId(Guid idRegistro);
+    public T? ObterPorId(Guid idRegistro);
 }
