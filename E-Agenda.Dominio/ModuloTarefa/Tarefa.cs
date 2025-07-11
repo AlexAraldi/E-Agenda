@@ -10,6 +10,7 @@ public class Tarefa : EntidadeBase<Tarefa>
     public DateTime DataCriacao { get; set; }
     public DateTime DataConclusao { get; set; }
     public Status StatusTarefa { get; set; }
+    public bool Concluido { get; set; } //Adicionado 33:49 v1 a82
     public List<Item> Itens { get; set; }
     public decimal PercentualConcluido 
     {
