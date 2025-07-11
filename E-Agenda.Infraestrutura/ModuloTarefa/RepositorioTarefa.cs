@@ -8,12 +8,13 @@ public class RepositorioTarefa : RepositorioBaseEmArquivos<Tarefa>, IRepositorio
 
     public List<Tarefa> ObterTarefasConcluidas()
     {
-        return ObterRegistros().Where(t => t.StatusTarefa == Tarefa.Status.Concluida).ToList();
+        return registros.FindAll(t => !t.Concluido);
+
     }
 
     public List<Tarefa> ObterTarefasPendentes()
     {
-        return ObterRegistros().Where(t => t.StatusTarefa == Tarefa.Status.Pendente).ToList();
+        return registros.FindAll(t => !t.Concluido);
     }
 
     public List<Tarefa> ObterTarefasPorPrioridade(Tarefa.Prioridade prioridade)
@@ -24,5 +25,9 @@ public class RepositorioTarefa : RepositorioBaseEmArquivos<Tarefa>, IRepositorio
     protected override List<Tarefa> ObterRegistros()
     {
         return Contexto.Tarefas;
+    }
+    public Tarefa? SelecionarRegistroPorId(Guid idTarefa) // adicionado, nao encontrado
+    {
+        return registros.Find(t => t.Id.Equals(idTarefa));
     }
 }
