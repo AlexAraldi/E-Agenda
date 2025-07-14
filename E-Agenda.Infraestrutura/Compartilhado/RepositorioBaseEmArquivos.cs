@@ -25,7 +25,7 @@ public abstract class RepositorioBaseEmArquivos<T> where T : EntidadeBase<T>
 
     public bool Editar(Guid idRegistro, T registroEditado)
     {
-        T? registroSelecionado = ObterPorId(idRegistro);
+        T? registroSelecionado = ObterPorId(idRegistro);  //Cláusula de guarda
 
         if (registroSelecionado is null)
 
@@ -54,10 +54,10 @@ public abstract class RepositorioBaseEmArquivos<T> where T : EntidadeBase<T>
     {
         return registros;
     }
-    
+
     public T? ObterPorId(Guid idRegistro)
     {
         return registros.Find((x) => x.Id.Equals(idRegistro));
     }
 
-} 
+}

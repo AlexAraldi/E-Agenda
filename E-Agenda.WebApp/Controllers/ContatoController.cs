@@ -3,6 +3,7 @@ using E_Agenda.Dominio.ModuloContatos;
 using E_Agenda.Infraestrutura.Compartilhado;
 using E_Agenda.Infraestrutura.ModuloCompromissos;
 using E_Agenda.Infraestrutura.ModuloContatos;
+using E_Agenda.WebApp.ActionFilters;
 using E_Agenda.WebApp.Extensions;
 using E_Agenda.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace E_Agenda.WebApp.Controllers
 {
     [Route("contatos")]
+    [ValidarModelo]
+
     public class ContatoController : Controller
     {
         private readonly ContextoDados contextoDados;
@@ -61,17 +64,16 @@ namespace E_Agenda.WebApp.Controllers
                 if (item.Email.Equals(cadastrarVM.Email))
                 {
                     ModelState.AddModelError("CadastroUnico", "Já existe um contato registrado com este email.");
-                    break;
+                    return View(cadastrarVM);
+
                 }
                 if (item.Telefone.Equals(cadastrarVM.Telefone))
                 {
                     ModelState.AddModelError("CadastroUnico", "Já existe um contato registrado com este telefone.");
-                    break;
+                    return View(cadastrarVM);
+
                 }
             }
-
-            if (!ModelState.IsValid)
-                return View(cadastrarVM);
 
             var entidade = cadastrarVM.ParaEntidade();
 
@@ -115,18 +117,17 @@ namespace E_Agenda.WebApp.Controllers
                 if (!item.Id.Equals(id) && item.Email.Equals(editarVM.Email))
                 {
                     ModelState.AddModelError("CadastroUnico", "Já existe um contato registrado com este email.");
-                    break;
+                    return View(editarVM);
+
                 }
 
                 if (!item.Id.Equals(id) && item.Telefone.Equals(editarVM.Telefone))
                 {
                     ModelState.AddModelError("CadastroUnico", "Já existe um contato registrado com este telefone.");
-                    break;
-                }        
-            }
+                    return View(editarVM);
 
-            if (!ModelState.IsValid)
-                return View(editarVM);
+                }
+            }
 
             var entidadeEditada = editarVM.ParaEntidade();
 

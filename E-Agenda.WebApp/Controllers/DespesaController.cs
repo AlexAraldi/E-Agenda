@@ -3,6 +3,7 @@ using E_Agenda.Dominio.ModuloDespesas;
 using E_Agenda.Infraestrutura.Compartilhado;
 using E_Agenda.Infraestrutura.ModuloCategorias;
 using E_Agenda.Infraestrutura.ModuloDespesas;
+using E_Agenda.WebApp.ActionFilters;
 using E_Agenda.WebApp.Extensions;
 using E_Agenda.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace E_Agenda.WebApp.Controllers;
 
 [Route("despesas")]
+[ValidarModelo]
+
 public class DespesaController : Controller
 {
     private readonly ContextoDados contextoDados;

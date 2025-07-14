@@ -1,6 +1,7 @@
 ﻿using E_Agenda.Dominio.ModuloCategorias;
 using E_Agenda.Infraestrutura.Compartilhado;
 using E_Agenda.Infraestrutura.ModuloCategorias;
+using E_Agenda.WebApp.ActionFilters;
 using E_Agenda.WebApp.Extensions;
 using E_Agenda.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace E_Agenda.WebApp.Controllers;
 
 [Route("categorias")]
+[ValidarModelo]
 public class CategoriaController : Controller
 {
     private readonly ContextoDados contextoDados;
@@ -55,12 +57,10 @@ public class CategoriaController : Controller
             if (item.Titulo.Equals(cadastrarVM.Titulo))
             {
                 ModelState.AddModelError("CadastroUnico", "Já existe uma categoria registrada com este título.");
-                break;
+                return View(cadastrarVM);
+
             }
         }
-        if (!ModelState.IsValid)
-            return View(cadastrarVM);
-
         var entidade = cadastrarVM.ParaEntidade();
 
         repositorioCategoria.Cadastrar(entidade);
@@ -95,11 +95,9 @@ public class CategoriaController : Controller
             if (!item.Id.Equals(id) && item.Titulo.Equals(editarVM.Titulo))
             {
                 ModelState.AddModelError("CadastroUnico", "Já existe uma categoria registrada com este título.");
-                break;
+                return View(editarVM);
             }
         }
-        if (!ModelState.IsValid)
-            return View(editarVM);
 
         var entidadeEditada = editarVM.ParaEntidade();
 

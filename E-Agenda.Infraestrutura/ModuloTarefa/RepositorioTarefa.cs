@@ -26,8 +26,5 @@ public class RepositorioTarefa : RepositorioBaseEmArquivos<Tarefa>, IRepositorio
     {
         return Contexto.Tarefas;
     }
-    public Tarefa? SelecionarRegistroPorId(Guid idTarefa) // adicionado, nao encontrado
-    {
-        return registros.Find(t => t.Id.Equals(idTarefa));
-    }
+    
 }
