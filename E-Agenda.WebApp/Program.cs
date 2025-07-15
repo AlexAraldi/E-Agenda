@@ -10,6 +10,7 @@ using E_Agenda.Infraestrutura.ModuloContatos;
 using E_Agenda.Infraestrutura.ModuloDespesas;
 using E_Agenda.Infraestrutura.ModuloTarefa;
 using E_Agenda.WebApp.ActionFilters;
+using E_Agenda.WebApp.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Events;
@@ -30,6 +31,7 @@ namespace E_Agenda.WebApp
             builder.Services.AddControllersWithViews(options => 
             { 
                 options.Filters.Add<ValidarModeloAttribute>();
+                options.Filters.Add<LogarAcaoAttribute>();
             });
             
             builder.Services.AddControllersWithViews();
@@ -40,18 +42,7 @@ namespace E_Agenda.WebApp
             builder.Services.AddScoped<IRepositorioContato, RepositorioContato>();
             builder.Services.AddScoped<IRepositorioDespesa, RepositorioDespesa>();
 
-            var caminhoAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var caminhoArquivoLogs = Path.Combine(caminhoAppData, "E-Agenda", "logs.txt");
-
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .WriteTo.Console()
-                .WriteTo.File(caminhoArquivoLogs,LogEventLevel.Error)
-                .CreateLogger();
-
-            builder.Logging.ClearProviders();
-            builder.Services.AddSerilog();
-
+            builder.Services.AddSerilogConfig(builder.Logging);
 
             var app = builder.Build();
 

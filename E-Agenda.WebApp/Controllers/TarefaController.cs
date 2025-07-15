@@ -23,7 +23,7 @@ public class TarefaController : Controller
         this.repositorioTarefa = repositorioTarefa;
     }
 
-    public IActionResult Index(string status)
+    public IActionResult Index(string? status)
     {
         ViewBag.Title = "Tarefas";
         ViewBag.Header = "Visualizando Tarefas";

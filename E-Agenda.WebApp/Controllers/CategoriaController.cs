@@ -15,7 +15,7 @@ public class CategoriaController : Controller
     private readonly ContextoDados contextoDados;
     private readonly IRepositorioCategoria repositorioCategoria;
 
-    public CategoriaController(ContextoDados contextoDados, IRepositorioCategoria repositorioCategoria )
+    public CategoriaController(ContextoDados contextoDados, IRepositorioCategoria repositorioCategoria)
     {
         this.contextoDados = contextoDados;
         this.repositorioCategoria = repositorioCategoria;
@@ -28,6 +28,7 @@ public class CategoriaController : Controller
         var registros = repositorioCategoria.ObterTodos();
 
         var visualizarVM = new VisualizarCategoriaViewModel(registros);
+
 
         return View(visualizarVM);
     }
