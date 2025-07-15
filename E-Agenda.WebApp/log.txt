@@ -1,0 +1,128 @@
+2025-07-15 02:17:03.239 -03:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-15 02:17:04.043 -03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2025-07-15 02:17:04.161 -03:00 [INF] Now listening on: https://localhost:7074
+2025-07-15 02:17:04.164 -03:00 [INF] Now listening on: http://localhost:5289
+2025-07-15 02:17:04.218 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-15 02:17:04.220 -03:00 [INF] Hosting environment: Production
+2025-07-15 02:17:04.223 -03:00 [INF] Content root path: C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp
+2025-07-15 02:17:17.269 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/ - null null
+2025-07-15 02:17:17.500 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:17.574 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller E_Agenda.WebApp.Controllers.HomeController (E-Agenda.WebApp).
+2025-07-15 02:17:17.664 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-15 02:17:17.781 -03:00 [INF] Executed ViewResult - view Index executed in 120.8449ms.
+2025-07-15 02:17:17.790 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp) in 209.7722ms
+2025-07-15 02:17:17.795 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:17.803 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/ - 200 null text/html; charset=utf-8 542.8259ms
+2025-07-15 02:17:17.928 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/imagens/icone.svg - null null
+2025-07-15 02:17:17.928 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/imagens/banner2.png - null null
+2025-07-15 02:17:17.928 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/imagens/banner1.png - null null
+2025-07-15 02:17:17.928 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/imagens/banner3.png - null null
+2025-07-15 02:17:17.928 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/css/styles.css - null null
+2025-07-15 02:17:17.940 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:17:17.951 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:17:18.018 -03:00 [INF] Sending file. Request path: '/css/styles.css'. Physical path: 'C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\wwwroot\css\styles.css'
+2025-07-15 02:17:18.018 -03:00 [INF] Sending file. Request path: '/imagens/icone.svg'. Physical path: 'C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\wwwroot\imagens\icone.svg'
+2025-07-15 02:17:18.039 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/css/styles.css - 200 3673 text/css 111.7197ms
+2025-07-15 02:17:18.042 -03:00 [INF] Sending file. Request path: '/imagens/banner3.png'. Physical path: 'C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\wwwroot\imagens\banner3.png'
+2025-07-15 02:17:18.046 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/imagens/icone.svg - 200 19764 image/svg+xml 118.4398ms
+2025-07-15 02:17:18.071 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/imagens/banner3.png - 200 387145 image/png 142.3438ms
+2025-07-15 02:17:18.103 -03:00 [INF] Sending file. Request path: '/imagens/banner1.png'. Physical path: 'C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\wwwroot\imagens\banner1.png'
+2025-07-15 02:17:18.034 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 93.678ms
+2025-07-15 02:17:18.115 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/imagens/banner1.png - 200 1142549 image/png 187.2473ms
+2025-07-15 02:17:18.132 -03:00 [INF] Sending file. Request path: '/imagens/banner2.png'. Physical path: 'C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\wwwroot\imagens\banner2.png'
+2025-07-15 02:17:18.136 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/imagens/banner2.png - 200 1703397 image/png 207.1588ms
+2025-07-15 02:17:18.155 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 205.2942ms
+2025-07-15 02:17:20.285 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/despesas - null null
+2025-07-15 02:17:20.297 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.DespesaController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:20.302 -03:00 [INF] Route matched with {action = "Index", controller = "Despesa"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller E_Agenda.WebApp.Controllers.DespesaController (E-Agenda.WebApp).
+2025-07-15 02:17:20.379 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-15 02:17:20.432 -03:00 [INF] Executed ViewResult - view Index executed in 53.206ms.
+2025-07-15 02:17:20.437 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.DespesaController.Index (E-Agenda.WebApp) in 130.2145ms
+2025-07-15 02:17:20.441 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.DespesaController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:20.445 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/despesas - 200 null text/html; charset=utf-8 160.2636ms
+2025-07-15 02:17:20.503 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:17:20.512 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:17:20.526 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 13.9936ms
+2025-07-15 02:17:20.529 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.169ms
+2025-07-15 02:17:22.613 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/despesas/editar/c24e8ac8-9f5d-4aa5-a203-75406cf0a919 - null null
+2025-07-15 02:17:22.624 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.DespesaController.Editar (E-Agenda.WebApp)'
+2025-07-15 02:17:22.636 -03:00 [INF] Route matched with {action = "Editar", controller = "Despesa"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Editar(System.Guid) on controller E_Agenda.WebApp.Controllers.DespesaController (E-Agenda.WebApp).
+2025-07-15 02:17:22.663 -03:00 [INF] Executing ViewResult, running view Editar.
+2025-07-15 02:17:22.755 -03:00 [INF] Executed ViewResult - view Editar executed in 92.1577ms.
+2025-07-15 02:17:22.758 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.DespesaController.Editar (E-Agenda.WebApp) in 117.1948ms
+2025-07-15 02:17:22.761 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.DespesaController.Editar (E-Agenda.WebApp)'
+2025-07-15 02:17:22.763 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/despesas/editar/c24e8ac8-9f5d-4aa5-a203-75406cf0a919 - 200 null text/html; charset=utf-8 151.2931ms
+2025-07-15 02:17:22.839 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:17:22.840 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:17:22.851 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 11.9564ms
+2025-07-15 02:17:22.884 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.8343ms
+2025-07-15 02:17:24.269 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/contatos - null null
+2025-07-15 02:17:24.281 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.ContatoController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:24.286 -03:00 [INF] Route matched with {action = "Index", controller = "Contato"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller E_Agenda.WebApp.Controllers.ContatoController (E-Agenda.WebApp).
+2025-07-15 02:17:24.296 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-15 02:17:24.308 -03:00 [INF] Executed ViewResult - view Index executed in 11.566ms.
+2025-07-15 02:17:24.312 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.ContatoController.Index (E-Agenda.WebApp) in 22.0843ms
+2025-07-15 02:17:24.315 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.ContatoController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:24.318 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/contatos - 200 null text/html; charset=utf-8 49.8145ms
+2025-07-15 02:17:24.338 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:17:24.349 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:17:24.361 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 11.7712ms
+2025-07-15 02:17:24.363 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.3998ms
+2025-07-15 02:17:26.653 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/ - null null
+2025-07-15 02:17:26.667 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:26.671 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller E_Agenda.WebApp.Controllers.HomeController (E-Agenda.WebApp).
+2025-07-15 02:17:26.676 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-15 02:17:26.684 -03:00 [INF] Executed ViewResult - view Index executed in 7.4605ms.
+2025-07-15 02:17:26.687 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp) in 11.1208ms
+2025-07-15 02:17:26.693 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.HomeController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:26.695 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/ - 200 null text/html; charset=utf-8 43.1601ms
+2025-07-15 02:17:26.707 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:17:26.708 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:17:26.725 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 17.6303ms
+2025-07-15 02:17:26.729 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.8741ms
+2025-07-15 02:17:29.112 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/tarefas - null null
+2025-07-15 02:17:29.120 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.TarefaController.Index (E-Agenda.WebApp)'
+2025-07-15 02:17:29.125 -03:00 [INF] Route matched with {action = "Index", controller = "Tarefa"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller E_Agenda.WebApp.Controllers.TarefaController (E-Agenda.WebApp).
+2025-07-15 02:17:29.146 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-15 02:18:05.111 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.TarefaController.Index (E-Agenda.WebApp) in 35981.8809ms
+2025-07-15 02:18:05.116 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.TarefaController.Index (E-Agenda.WebApp)'
+2025-07-15 02:18:05.130 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCoreGeneratedDocument.Views_Tarefa_Index.ExecuteAsync() in C:\Projetos Academia do Programador 2025\E-Agenda\E-Agenda.WebApp\Views\Tarefa\Index.cshtml:line 46
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-15 02:18:05.246 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.HomeController.Erro (E-Agenda.WebApp)'
+2025-07-15 02:18:05.249 -03:00 [INF] Route matched with {action = "Erro", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Erro() on controller E_Agenda.WebApp.Controllers.HomeController (E-Agenda.WebApp).
+2025-07-15 02:18:05.255 -03:00 [INF] Executing ViewResult, running view Erro.
+2025-07-15 02:18:05.268 -03:00 [INF] Executed ViewResult - view Erro executed in 13.6272ms.
+2025-07-15 02:18:05.281 -03:00 [INF] Executed action E_Agenda.WebApp.Controllers.HomeController.Erro (E-Agenda.WebApp) in 29.3876ms
+2025-07-15 02:18:05.284 -03:00 [INF] Executed endpoint 'E_Agenda.WebApp.Controllers.HomeController.Erro (E-Agenda.WebApp)'
+2025-07-15 02:18:05.290 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/tarefas - 500 null text/html; charset=utf-8 36177.7714ms
+2025-07-15 02:18:05.314 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - null null
+2025-07-15 02:18:05.314 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-15 02:18:05.333 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 18.3169ms
+2025-07-15 02:18:05.355 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.3996ms
+2025-07-15 02:18:09.348 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7074/tarefas - null null
+2025-07-15 02:18:09.363 -03:00 [INF] Executing endpoint 'E_Agenda.WebApp.Controllers.TarefaController.Index (E-Agenda.WebApp)'
+2025-07-15 02:18:09.366 -03:00 [INF] Route matched with {action = "Index", controller = "Tarefa"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller E_Agenda.WebApp.Controllers.TarefaController (E-Agenda.WebApp).
+2025-07-15 02:18:09.380 -03:00 [INF] Executing ViewResult, running view Index.

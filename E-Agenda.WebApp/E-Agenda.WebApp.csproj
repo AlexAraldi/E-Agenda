@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\E-Agenda.Dominio\E-Agenda.Dominio.csproj" />
     <ProjectReference Include="..\E-Agenda.Infraestrutura\E-Agenda.Infraestrutura.csproj" />
   </ItemGroup>
