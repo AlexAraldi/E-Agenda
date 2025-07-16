@@ -9,8 +9,11 @@ using E_Agenda.Dominio.ModuloTarefa;
 namespace E_Agenda.Infraestrutura.Compartilhado;
 public class ContextoDados
 {
-    private string pastaArmazenamento = "C:\\temp";
-    private string arquivoArmazenamento = "dados_e_agenda.json";
+    private string pastaArmazenamento = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "eAgenda"
+    ); 
+    private string arquivoArmazenamento = "dados.json";
 
     public List<Contato> Contatos { get; set; }
     public List<Compromisso> Compromissos { get; set; }
