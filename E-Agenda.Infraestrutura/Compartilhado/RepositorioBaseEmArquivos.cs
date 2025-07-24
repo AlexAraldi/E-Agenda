@@ -25,7 +25,7 @@ public abstract class RepositorioBaseEmArquivos<T> where T : EntidadeBase<T>
 
     public bool Editar(Guid idRegistro, T registroEditado)
     {
-        T? registroSelecionado = ObterPorId(idRegistro);  //Cláusula de guarda
+        T? registroSelecionado = SelecionarRegistroPorId(idRegistro);  //Cláusula de guarda
 
         if (registroSelecionado is null)
 
@@ -37,7 +37,7 @@ public abstract class RepositorioBaseEmArquivos<T> where T : EntidadeBase<T>
 
     public bool Excluir(Guid idRegistro)
     {
-        T? registroSelecionado = ObterPorId(idRegistro);
+        T? registroSelecionado = SelecionarRegistroPorId(idRegistro);
 
         if (registroSelecionado is null)
         {
@@ -50,12 +50,12 @@ public abstract class RepositorioBaseEmArquivos<T> where T : EntidadeBase<T>
         return true;
     }
 
-    public List<T> ObterTodos()
+    public List<T> SelecionarRegistro()
     {
         return registros;
     }
 
-    public T? ObterPorId(Guid idRegistro)
+    public T? SelecionarRegistroPorId(Guid idRegistro)
     {
         return registros.Find((x) => x.Id.Equals(idRegistro));
     }

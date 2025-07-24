@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Agenda.Dominio\E-Agenda.Dominio.csproj" />
+    <ProjectReference Include="..\E-Agenda.Infraestrutura.SqlServer\E-Agenda.Infraestrutura.SqlServer.csproj" />
     <ProjectReference Include="..\E-Agenda.Infraestrutura\E-Agenda.Infraestrutura.csproj" />
   </ItemGroup>
 

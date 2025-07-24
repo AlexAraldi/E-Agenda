@@ -32,7 +32,7 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos";
         ViewBag.Header = "Visualizando Compromissos";
 
-        var registros = repositorioCompromisso.ObterTodos();
+        var registros = repositorioCompromisso.SelecionarRegistro();
 
         var visualizarVM = new VisualizarCompromissoViewModel(registros);
 
@@ -45,7 +45,7 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos | Cadastrar";
         ViewBag.Header = "Cadastro de Compromisso";
 
-        var contatos = repositorioContato.ObterTodos();
+        var contatos = repositorioContato.SelecionarRegistro();
         var cadastrarVM = new CadastrarCompromissoViewModel(contatos);
 
         return View(cadastrarVM);
@@ -58,8 +58,8 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos | Cadastrar";
         ViewBag.Header = "Cadastro de Compromisso";
 
-        var registros = repositorioCompromisso.ObterTodos();
-        var contatos = repositorioContato.ObterTodos();
+        var registros = repositorioCompromisso.SelecionarRegistro();
+        var contatos = repositorioContato.SelecionarRegistro();
 
         if (cadastrarVM.HoraTermino <= cadastrarVM.HoraInicio)
             ModelState.AddModelError("HorarioInvalido", "O horário de término deve ser após o horário de início.");
@@ -88,9 +88,9 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos | Editar";
         ViewBag.Header = "Edição de Compromisso";
 
-        var registroSelecionado = repositorioCompromisso.ObterPorId(id);
+        var registroSelecionado = repositorioCompromisso.SelecionarRegistroPorId(id);
 
-        var contatos = repositorioContato.ObterTodos();
+        var contatos = repositorioContato.SelecionarRegistro();
 
         var editarVM = new EditarCompromissoViewModel(registroSelecionado.Id, registroSelecionado.Assunto, registroSelecionado.DataOcorrencia, registroSelecionado.HoraInicio, registroSelecionado.HoraTermino, registroSelecionado.Tipo, registroSelecionado.LocalOuLink, registroSelecionado.Contato?.Id, contatos);
 
@@ -104,8 +104,8 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos | Editar";
         ViewBag.Header = "Edição de Compromisso";
 
-        var registros = repositorioCompromisso.ObterTodos();
-        var contatos = repositorioContato.ObterTodos();
+        var registros = repositorioCompromisso.SelecionarRegistro();
+        var contatos = repositorioContato.SelecionarRegistro();
 
         if (editarVM.HoraTermino <= editarVM.HoraInicio)
             ModelState.AddModelError("HorarioInvalido", "O horário de término deve ser após o horário de início.");
@@ -134,7 +134,7 @@ public class CompromissoController : Controller
         ViewBag.Title = "Compromissos | Excluir";
         ViewBag.Header = "Exclusão de Compromisso";
 
-        var registroSelecionado = repositorioCompromisso.ObterPorId(id);
+        var registroSelecionado = repositorioCompromisso.SelecionarRegistroPorId(id);
 
         var excluirVM = new ExcluirCompromissoViewModel(registroSelecionado.Id, registroSelecionado.Assunto);
 

@@ -31,7 +31,7 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos";
             ViewBag.Header = "Visualizando Contatos";
 
-            var registros = repositorioContato.ObterTodos();
+            var registros = repositorioContato.SelecionarRegistro();
 
             var visualizarVM = new VisualizarContatoViewModel(registros);
 
@@ -57,7 +57,7 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos | Cadastrar";
             ViewBag.Header = "Cadastro de Contato";
 
-            var registros = repositorioContato.ObterTodos();
+            var registros = repositorioContato.SelecionarRegistro();
 
             foreach (var item in registros)
             {
@@ -88,7 +88,7 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos | Editar";
             ViewBag.Header = "Edição de Contato";
 
-            var registros = repositorioContato.ObterPorId(id);
+            var registros = repositorioContato.SelecionarRegistroPorId(id);
 
             var editarVM = new EditarContatoViewModel(
                 id,
@@ -109,7 +109,7 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos | Editar";
             ViewBag.Header = "Edição de Contato";
 
-            var registros = repositorioContato.ObterTodos();
+            var registros = repositorioContato.SelecionarRegistro();
 
             foreach (var item in registros)
             {
@@ -143,7 +143,7 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos | Excluir";
             ViewBag.Header = "Exclusão de Contato";
 
-            var registroSelecionado = repositorioContato.ObterPorId(id);
+            var registroSelecionado = repositorioContato.SelecionarRegistroPorId(id);
 
             var excluirVM = new ExcluirContatoViewModel(registroSelecionado.Id, registroSelecionado.Nome);
 
@@ -157,9 +157,9 @@ namespace E_Agenda.WebApp.Controllers
             ViewBag.Title = "Contatos | Excluir";
             ViewBag.Header = "Exclusão de Contato";
 
-            var contato = repositorioContato.ObterPorId(id);
+            var contato = repositorioContato.SelecionarRegistroPorId(id);
 
-            var compromissos = repositoriocompromisso.ObterTodos();
+            var compromissos = repositoriocompromisso.SelecionarRegistro();
 
             foreach (var c in compromissos)
             {

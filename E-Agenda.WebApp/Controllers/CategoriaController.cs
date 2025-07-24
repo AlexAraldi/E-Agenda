@@ -25,7 +25,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias";
         ViewBag.Header = "Visualizando Categorias";
 
-        var registros = repositorioCategoria.ObterTodos();
+        var registros = repositorioCategoria.SelecionarRegistro();
 
         var visualizarVM = new VisualizarCategoriaViewModel(registros);
 
@@ -51,7 +51,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Cadastrar";
         ViewBag.Header = "Cadastro de Categoria";
 
-        var registros = repositorioCategoria.ObterTodos();
+        var registros = repositorioCategoria.SelecionarRegistro();
 
         foreach (var item in registros)
         {
@@ -75,7 +75,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Editar";
         ViewBag.Header = "Edição de Categoria";
 
-        var registroSelecionado = repositorioCategoria.ObterPorId(id);
+        var registroSelecionado = repositorioCategoria.SelecionarRegistroPorId(id);
 
         var editarVM = new EditarCategoriaViewModel(id, registroSelecionado.Titulo);
 
@@ -89,7 +89,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Editar";
         ViewBag.Header = "Edição de Categoria";
 
-        var registros = repositorioCategoria.ObterTodos();
+        var registros = repositorioCategoria.SelecionarRegistro();
 
         foreach (var item in registros)
         {
@@ -113,7 +113,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Excluir";
         ViewBag.Header = "Exclusão de Categoria";
 
-        var registroSelecionado = repositorioCategoria.ObterPorId(id);
+        var registroSelecionado = repositorioCategoria.SelecionarRegistroPorId(id);
 
         var excluirVM = new ExcluirCategoriaViewModel(registroSelecionado.Id, registroSelecionado.Titulo);
 
@@ -127,7 +127,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Excluir";
         ViewBag.Header = "Exclusão de Categoria";
 
-        var categoriaSelecionada = repositorioCategoria.ObterPorId(id);
+        var categoriaSelecionada = repositorioCategoria.SelecionarRegistroPorId(id);
 
         if (categoriaSelecionada.Despesas.Count > 0)
         {
@@ -149,7 +149,7 @@ public class CategoriaController : Controller
         ViewBag.Title = "Categorias | Detalhes";
         ViewBag.Header = "Detalhes da Categoria";
 
-        var registroSelecionado = repositorioCategoria.ObterPorId(id);
+        var registroSelecionado = repositorioCategoria.SelecionarRegistroPorId(id);
 
         var detalhesVM = new DetalhesCategoriaViewModel(id, registroSelecionado.Titulo, registroSelecionado.Despesas);
 

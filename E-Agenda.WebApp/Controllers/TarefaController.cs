@@ -37,7 +37,7 @@ public class TarefaController : Controller
             case "alta": tarefas = repositorioTarefa.ObterTarefasPorPrioridade(Tarefa.Prioridade.Alta); break;
             case "normal": tarefas = repositorioTarefa.ObterTarefasPorPrioridade(Tarefa.Prioridade.Normal); break;
             case "baixa": tarefas = repositorioTarefa.ObterTarefasPorPrioridade(Tarefa.Prioridade.Baixa); break;
-            default: tarefas = repositorioTarefa.ObterTodos(); break;
+            default: tarefas = repositorioTarefa.SelecionarRegistro(); break;
         }
 
         var VisualizarVM = new VisualizarTarefaViewModel(tarefas);
@@ -81,7 +81,7 @@ public class TarefaController : Controller
         ViewBag.Title = "Tarefas | Editar";
         ViewBag.Header = "Edição de Tarefa";
 
-        var registroSelecionado = repositorioTarefa.ObterPorId(id);
+        var registroSelecionado = repositorioTarefa.SelecionarRegistroPorId(id);
 
         var editarVM = new EditarTarefaViewModel(
             registroSelecionado.Id,
@@ -99,7 +99,7 @@ public class TarefaController : Controller
         ViewBag.Title = "Tarefas | Editar";
         ViewBag.Header = "Edição de Tarefa";
 
-        var registros = repositorioTarefa.ObterTodos();
+        var registros = repositorioTarefa.SelecionarRegistro();
 
         if (!ModelState.IsValid)
             return View(editarVM);
@@ -117,7 +117,7 @@ public class TarefaController : Controller
         ViewBag.Title = "Tarefas | Excluir";
         ViewBag.Header = "Exclusão de Tarefa";
 
-        var registroSelecionado = repositorioTarefa.ObterPorId(id);
+        var registroSelecionado = repositorioTarefa.SelecionarRegistroPorId(id);
 
         var excluirVM = new ExcluirTarefaViewModel(registroSelecionado.Id, registroSelecionado.Titulo);
 
@@ -143,7 +143,7 @@ public class TarefaController : Controller
         ViewBag.Title = "Tarefas | Gerenciar";
         ViewBag.Header = "Gerenciamento de Tarefa";
 
-        var tarefaSelecionada = repositorioTarefa.ObterPorId(id);
+        var tarefaSelecionada = repositorioTarefa.SelecionarRegistroPorId(id);
 
         var gerenciarItensViewModel = new GerenciarTarefaViewModel(tarefaSelecionada);
 
@@ -153,7 +153,7 @@ public class TarefaController : Controller
     [HttpPost, Route("/tarefas/{id:guid}/concluir")]
     public IActionResult Concluir(Guid id)
     {
-        var tarefaSelecionada = repositorioTarefa.ObterPorId(id);
+        var tarefaSelecionada = repositorioTarefa.SelecionarRegistroPorId(id);
 
         tarefaSelecionada.ConcluirTarefa();
 
@@ -165,7 +165,7 @@ public class TarefaController : Controller
     [HttpPost, Route("/tarefas/{id:guid}/adicionar_item")]
     public IActionResult AdicionarItem(Guid id, string titulo)
     {
-        var tarefaSelecionada = repositorioTarefa.ObterPorId(id);
+        var tarefaSelecionada = repositorioTarefa.SelecionarRegistroPorId(id);
 
         tarefaSelecionada.AdicionarItem(titulo);
 
@@ -179,7 +179,7 @@ public class TarefaController : Controller
     [HttpPost, Route("/tarefas/{idTarefa:guid}/alternar_status/{idItem:guid}")]
     public IActionResult AlternarStatus(Guid idTarefa, Guid idItem)
     {
-        var tarefaSelecionada = repositorioTarefa.ObterPorId(idTarefa);
+        var tarefaSelecionada = repositorioTarefa.SelecionarRegistroPorId(idTarefa);
 
         var itemSelecionado = tarefaSelecionada.ObterItem(idItem);
 
@@ -198,7 +198,7 @@ public class TarefaController : Controller
     [HttpPost, Route("/tarefas/{idTarefa:guid}/remover_item/{idItem:guid}")]
     public IActionResult RemoverItem(Guid idTarefa, Guid idItem)
     {
-        var tarefaSelecionada = repositorioTarefa.ObterPorId(idTarefa);
+        var tarefaSelecionada = repositorioTarefa.SelecionarRegistroPorId(idTarefa);
 
         var itemSelecionado = tarefaSelecionada.ObterItem(idItem);
 

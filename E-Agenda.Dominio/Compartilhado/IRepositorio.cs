@@ -7,7 +7,7 @@ public interface IRepositorio<T> where T : EntidadeBase<T>
 
     public bool Excluir(Guid idRegistro);
 
-    public List<T> ObterTodos();
+    public List<T> SelecionarRegistro();
 
-    public T? ObterPorId(Guid idRegistro);
+    public T? SelecionarRegistroPorId(Guid idRegistro);
 }

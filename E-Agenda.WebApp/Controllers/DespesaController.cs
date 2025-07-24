@@ -32,7 +32,7 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas";
         ViewBag.Header = "Visualizando Despesa";
 
-        var registros = repositorioDespesa.ObterTodos();
+        var registros = repositorioDespesa.SelecionarRegistro();
 
         var visualizarVM = new VisualizarDespesaViewModel(registros);
 
@@ -45,7 +45,7 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas | Cadastrar";
         ViewBag.Header = "Cadastro de Despesa";
 
-        var categorias = repositorioCategoria.ObterTodos();
+        var categorias = repositorioCategoria.SelecionarRegistro();
 
         var cadastrarVM = new CadastrarDespesaViewModel(categorias);
 
@@ -64,12 +64,12 @@ public class DespesaController : Controller
 
         if (!ModelState.IsValid)
         {
-            var categorias = repositorioCategoria.ObterTodos();
+            var categorias = repositorioCategoria.SelecionarRegistro();
             cadastrarVM.CategoriasDisponiveis = categorias.Select(c => new SelectListItem(c.Titulo, c.Id.ToString())).ToList();
             return View(cadastrarVM);
         }
 
-        var categoriasSelecionadas = repositorioCategoria.ObterTodos().Where(c => cadastrarVM.CategoriasSelecionadas.Contains(c.Id)).ToList();
+        var categoriasSelecionadas = repositorioCategoria.SelecionarRegistro().Where(c => cadastrarVM.CategoriasSelecionadas.Contains(c.Id)).ToList();
 
         var entidade = cadastrarVM.ParaEntidade(categoriasSelecionadas);
 
@@ -90,8 +90,8 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas | Editar";
         ViewBag.Header = "Edição de Despesa";
 
-        var registroSelecionado = repositorioDespesa.ObterPorId(id);
-        var categorias = repositorioCategoria.ObterTodos();
+        var registroSelecionado = repositorioDespesa.SelecionarRegistroPorId(id);
+        var categorias = repositorioCategoria.SelecionarRegistro();
 
         var editarVM = new EditarDespesaViewModel(
             id,
@@ -111,7 +111,7 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas | Editar";
         ViewBag.Header = "Edição de Despesa";
 
-        var registroSelecionado = repositorioDespesa.ObterPorId(id);
+        var registroSelecionado = repositorioDespesa.SelecionarRegistroPorId(id);
 
         foreach (var c in registroSelecionado.Categorias)
             c.RemoverDespesa(registroSelecionado);
@@ -121,12 +121,12 @@ public class DespesaController : Controller
 
         if (!ModelState.IsValid)
         {
-            var categorias = repositorioCategoria.ObterTodos();
+            var categorias = repositorioCategoria.SelecionarRegistro();
             editarVM.CategoriasDisponiveis = categorias.Select(c => new SelectListItem(c.Titulo, c.Id.ToString())).ToList();
             return View(editarVM);
         }
 
-        var categoriasSelecionadas = repositorioCategoria.ObterTodos().Where(c => editarVM.CategoriasSelecionadas.Contains(c.Id)).ToList();
+        var categoriasSelecionadas = repositorioCategoria.SelecionarRegistro().Where(c => editarVM.CategoriasSelecionadas.Contains(c.Id)).ToList();
 
         var entidadeEditada = editarVM.ParaEntidade(categoriasSelecionadas);
 
@@ -146,7 +146,7 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas | Excluir";
         ViewBag.Header = "Exclusão de Despesa";
 
-        var registroSelecionado = repositorioDespesa.ObterPorId(id);
+        var registroSelecionado = repositorioDespesa.SelecionarRegistroPorId(id);
 
         var excluirVM = new ExcluirDespesaViewModel(registroSelecionado.Id, registroSelecionado.Descricao);
 
@@ -160,7 +160,7 @@ public class DespesaController : Controller
         ViewBag.Title = "Despesas | Excluir";
         ViewBag.Header = "Exclusão de Despesa";
 
-        var despesaSelecionada = repositorioDespesa.ObterPorId(id);
+        var despesaSelecionada = repositorioDespesa.SelecionarRegistroPorId(id);
 
         foreach (var c in despesaSelecionada.Categorias)
             c.RemoverDespesa(despesaSelecionada);
