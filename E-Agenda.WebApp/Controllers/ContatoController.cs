@@ -23,7 +23,7 @@ namespace E_Agenda.WebApp.Controllers
         {
             this.contextoDados = contextoDados;
             this.repositorioContato = repositorioContato;
-            this.repositoriocompromisso =  repositorioCompromisso;
+            this.repositoriocompromisso = repositorioCompromisso;
         }
 
         public IActionResult Index()
@@ -113,7 +113,7 @@ namespace E_Agenda.WebApp.Controllers
 
             foreach (var item in registros)
             {
-                
+
                 if (!item.Id.Equals(id) && item.Email.Equals(editarVM.Email))
                 {
                     ModelState.AddModelError("CadastroUnico", "Já existe um contato registrado com este email.");
@@ -161,9 +161,9 @@ namespace E_Agenda.WebApp.Controllers
 
             var compromissos = repositoriocompromisso.ObterTodos();
 
-            foreach (var c in compromissos) 
+            foreach (var c in compromissos)
             {
-                if(c.Contato.Id == contato.Id)
+                if (c.Contato.Id == contato.Id)
                 {
                     ModelState.AddModelError("Exclusão", "Não é possível excluir uma contato com compromissos vinculados");
 
