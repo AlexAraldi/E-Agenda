@@ -38,7 +38,6 @@ namespace E_Agenda.Infraestrutura.SqlServer
 
 
         }
-
         public bool Editar(Guid idRegistro, Contato registroEditado)
         {
            var sqlEditar =
@@ -65,7 +64,6 @@ namespace E_Agenda.Infraestrutura.SqlServer
             // retorna true se pelo menos um registro foi afetado, caso contrário, retorna false
             return linhasAfetadas > 0;
         }
-
         public bool Excluir(Guid idRegistro)
         {
             var sqlExcluir =
@@ -86,7 +84,6 @@ namespace E_Agenda.Infraestrutura.SqlServer
             return linhasAfetadas > 0;
 
         }
-
         public Contato? SelecionarRegistroPorId(Guid idRegistro)
         {
             var selecionarPorId =
@@ -118,7 +115,6 @@ namespace E_Agenda.Infraestrutura.SqlServer
 
             return contato;
         }
-
         public List<Contato> SelecionarRegistro()
         {
             // configura o comando a ser executado
@@ -152,7 +148,6 @@ namespace E_Agenda.Infraestrutura.SqlServer
 
             return contatos;
         }
-
         private Contato ConverterParaContato(SqlDataReader leitor)
         {
             var contato = new Contato(
