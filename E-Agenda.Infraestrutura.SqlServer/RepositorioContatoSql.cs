@@ -41,17 +41,82 @@ namespace E_Agenda.Infraestrutura.SqlServer
 
         public bool Editar(Guid idRegistro, Contato registroEditado)
         {
-            throw new NotImplementedException();
+           var sqlEditar =
+                @"UPDATE [TBCONTATO]
+                    SET
+                        [NOME] = @NOME,
+                        [EMAIL] = @EMAIL,
+                        [TELEFONE] = @TELEFONE,
+                        [EMPRESA] = @EMPRESA,
+                        [CARGO] = @CARGO
+                    WHERE
+                        [ID] = @ID";
+            SqlConnection conexaoComBanco = new SqlConnection(connectionString);
+            SqlCommand comandoEdicao = new SqlCommand(sqlEditar, conexaoComBanco);
+         
+            registroEditado.Id = idRegistro;
+            ConfigurarParametrosContato(registroEditado, comandoEdicao);
+            // abre a conexão com o banco de dados
+            conexaoComBanco.Open();
+            // executa o comando e obtém o número de registros afetados
+            var linhasAfetadas = comandoEdicao.ExecuteNonQuery();
+            // fecha a conexão com o banco de dados 
+            conexaoComBanco.Close();
+            // retorna true se pelo menos um registro foi afetado, caso contrário, retorna false
+            return linhasAfetadas > 0;
         }
 
         public bool Excluir(Guid idRegistro)
         {
-            throw new NotImplementedException();
+            var sqlExcluir =
+                @"DELETE FROM [TBCONTATO]
+                    WHERE
+                        [ID] = @ID";
+            SqlConnection conexaoComBanco = new SqlConnection(connectionString);
+            SqlCommand comandoExclusao = new SqlCommand(sqlExcluir, conexaoComBanco);
+            // adiciona o parâmetro ID ao comando
+            comandoExclusao.Parameters.AddWithValue("ID", idRegistro);
+            // abre a conexão com o banco de dados
+            conexaoComBanco.Open();
+            // executa o comando e obtém o número de registros afetados
+            var linhasAfetadas = comandoExclusao.ExecuteNonQuery();
+            // fecha a conexão com o banco de dados
+            conexaoComBanco.Close();
+            // retorna true se pelo menos um registro foi afetado, caso contrário, retorna false
+            return linhasAfetadas > 0;
+
         }
 
         public Contato? SelecionarRegistroPorId(Guid idRegistro)
         {
-            throw new NotImplementedException();
+            var selecionarPorId =
+                @"SELECT
+                        [ID],
+                        [NOME],
+                        [EMAIL],
+                        [TELEFONE],
+                        [EMPRESA],
+                        [CARGO]
+                    FROM
+                        [TBCONTATO]
+                    WHERE
+                        [ID] = @ID";
+            SqlConnection conexaoComBanco = new SqlConnection(connectionString);
+            SqlCommand comandoInsercao = new SqlCommand(selecionarPorId, conexaoComBanco);
+            // adiciona o parâmetro ID ao comando
+            comandoInsercao.Parameters.AddWithValue("ID", idRegistro);
+
+            // abre a conexão com o banco de dados
+            conexaoComBanco.Open();
+
+            SqlDataReader leitor = comandoInsercao.ExecuteReader();
+            Contato? contato = null;
+
+            if (leitor.Read())
+
+                contato = ConverterParaContato(leitor);
+
+            return contato;
         }
 
         public List<Contato> SelecionarRegistro()
@@ -91,7 +156,7 @@ namespace E_Agenda.Infraestrutura.SqlServer
         private Contato ConverterParaContato(SqlDataReader leitor)
         {
             var contato = new Contato(
-                    Convert.ToString(leitor["NOME"])!,
+                     Convert.ToString(leitor["NOME"])!,
                      Convert.ToString(leitor["EMAIL"])!,
                      Convert.ToString(leitor["TELEFONE"])!,
                      Convert.ToString(leitor["EMPRESA"])!,
