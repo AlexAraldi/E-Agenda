@@ -8,6 +8,35 @@ namespace E_Agenda.Infraestrutura.SqlServer
         private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=eAgendaDb;Integrated Security=True";
         public void Cadastrar(Contato novoRegistro)
         {
+            var sqlInserir =
+                @"INSERT INTO [TBCONTATO] 
+                    (
+                        [ID],
+                        [NOME], 
+                        [EMAIL], 
+                        [TELEFONE], 
+                        [EMPRESA], 
+                        [CARGO]
+                    ) 
+                    VALUES 
+                    (
+                        @ID,
+                        @NOME, 
+                        @EMAIL, 
+                        @TELEFONE, 
+                        @EMPRESA, 
+                        @CARGO
+                    );";
+
+            SqlConnection conexaoComBanco = new SqlConnection(connectionString);
+            SqlCommand comandoInsercao = new SqlCommand(sqlInserir, conexaoComBanco);
+
+            ConfigurarParametrosContato(novoRegistro, comandoInsercao);
+            conexaoComBanco.Open();
+            comandoInsercao.ExecuteNonQuery();
+            conexaoComBanco.Close();
+
+
         }
 
         public bool Editar(Guid idRegistro, Contato registroEditado)
@@ -59,7 +88,7 @@ namespace E_Agenda.Infraestrutura.SqlServer
             return contatos;
         }
 
-        private Contato ConverterParaContato(SqlDataReader leitor) 
+        private Contato ConverterParaContato(SqlDataReader leitor)
         {
             var contato = new Contato(
                     Convert.ToString(leitor["NOME"])!,
@@ -73,6 +102,15 @@ namespace E_Agenda.Infraestrutura.SqlServer
 
             return contato;
 
+        }
+        private void ConfigurarParametrosContato(Contato contato, SqlCommand comando)
+        {
+            comando.Parameters.AddWithValue("ID", contato.Id);
+            comando.Parameters.AddWithValue("NOME", contato.Nome);
+            comando.Parameters.AddWithValue("EMAIL", contato.Email);
+            comando.Parameters.AddWithValue("TELEFONE", contato.Telefone);
+            comando.Parameters.AddWithValue("EMPRESA", contato.Empresa);
+            comando.Parameters.AddWithValue("CARGO", contato.Cargo);
         }
     }
 }
