@@ -9,7 +9,7 @@ using E_Agenda.Infraestrutura.ModuloCompromissos;
 using E_Agenda.Infraestrutura.ModuloContatos;
 using E_Agenda.Infraestrutura.ModuloDespesas;
 using E_Agenda.Infraestrutura.ModuloTarefa;
-using E_Agenda.Infraestrutura.SqlServer;
+using E_Agenda.Infraestrutura.SqlServer.ModuloContato;
 using E_Agenda.WebApp.ActionFilters;
 using E_Agenda.WebApp.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
