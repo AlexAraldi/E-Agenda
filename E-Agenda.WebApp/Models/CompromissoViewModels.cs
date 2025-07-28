@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Agenda.WebApp.Models;
 
-public class FormularioComprimissoViewModel
+public class FormularioCompromissoViewModel
 {
     [Required(ErrorMessage = "O campo \"Assunto\" é obrigatório.")]
     [MinLength(2, ErrorMessage = "O campo \"Assunto\" precisa ter no mínimo 2 caracteres.")]
@@ -33,13 +33,13 @@ public class FormularioComprimissoViewModel
 
     public List<SelecionarContatoViewModel> ContatosDisponiveis { get; set; }
 
-    protected FormularioComprimissoViewModel()
+    protected FormularioCompromissoViewModel()
     {
         ContatosDisponiveis = new();
     }
 }
 
-public class CadastrarCompromissoViewModel : FormularioComprimissoViewModel
+public class CadastrarCompromissoViewModel : FormularioCompromissoViewModel
 {
     public CadastrarCompromissoViewModel() { }
 
@@ -53,7 +53,7 @@ public class CadastrarCompromissoViewModel : FormularioComprimissoViewModel
     }
 }
 
-public class EditarCompromissoViewModel : FormularioComprimissoViewModel
+public class EditarCompromissoViewModel : FormularioCompromissoViewModel
 {
     public Guid Id { get; set; }
     public EditarCompromissoViewModel() { }
