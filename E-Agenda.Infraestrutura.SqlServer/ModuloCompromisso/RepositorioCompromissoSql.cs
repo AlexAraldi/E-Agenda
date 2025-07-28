@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using E_Agenda.Dominio.ModuloCompromissos;
+﻿using E_Agenda.Dominio.ModuloCompromissos;
 using E_Agenda.Dominio.ModuloContatos;
 using Microsoft.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace E_Agenda.Infraestrutura.SqlServer.ModuloCompromisso
 {
@@ -58,19 +52,20 @@ namespace E_Agenda.Infraestrutura.SqlServer.ModuloCompromisso
         }
         private Compromisso ConverterParaCompromisso(SqlDataReader leitorCompromisso)
         {
-            var horaInicio = TimeSpan.FromTicks(Convert.ToInt64(leitorCompromisso["HoraInicio"]));
-            var horaTermino = TimeSpan.FromTicks(Convert.ToInt64(leitorCompromisso["HoraTermino"]));
+            var horaInicio = TimeOnly.FromTimeSpan(TimeSpan.FromTicks(Convert.ToInt64(leitorCompromisso["HoraInicio"])));
+            var horaTermino = TimeOnly.FromTimeSpan(TimeSpan.FromTicks(Convert.ToInt64(leitorCompromisso["HoraTermino"])));
             Contato? contato = null;
 
             if (!leitorCompromisso["Contato_Id"].Equals(DBNull.Value))
-               contato = ConverterParaContato(leitorCompromisso);            
+                contato = ConverterParaContato(leitorCompromisso);
 
+            var tipo = (TipoCompromisso)Convert.ToInt32(leitorCompromisso["Tipo"]);
             var compromisso = new Compromisso(
                 Convert.ToString(leitorCompromisso["Assunto"]),
-                Convert.ToDateTime(leitorCompromisso["Data"]),
+                DateOnly.FromDateTime(Convert.ToDateTime(leitorCompromisso["Data"])),
                 horaInicio,
                 horaTermino,
-               (TipoCompromisso)Convert.ToInt32(leitorCompromisso["Tipo"]),
+                tipo == TipoCompromisso.Remoto, // Passa bool baseado no tipo
                 Convert.ToString(leitorCompromisso["Local"]),
                 Convert.ToString(leitorCompromisso["Link"]),
                 contato);
