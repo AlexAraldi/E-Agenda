@@ -9,6 +9,7 @@ using E_Agenda.Infraestrutura.ModuloCompromissos;
 using E_Agenda.Infraestrutura.ModuloContatos;
 using E_Agenda.Infraestrutura.ModuloDespesas;
 using E_Agenda.Infraestrutura.ModuloTarefa;
+using E_Agenda.Infraestrutura.SqlServer.ModuloCompromisso;
 using E_Agenda.Infraestrutura.SqlServer.ModuloContato;
 using E_Agenda.WebApp.ActionFilters;
 using E_Agenda.WebApp.DependencyInjection;
@@ -39,7 +40,7 @@ namespace E_Agenda.WebApp
             builder.Services.AddScoped<ContextoDados>((_)=> new ContextoDados(true));
             builder.Services.AddScoped<IRepositorioTarefa,RepositorioTarefa>();
             builder.Services.AddScoped<IRepositorioCategoria, RepositorioCategoria>();
-            builder.Services.AddScoped<IRepositorioCompromisso, RepositorioCompromisso>();
+            builder.Services.AddScoped<IRepositorioCompromisso, RepositorioCompromissoSql>();
             builder.Services.AddScoped<IRepositorioContato, RepositorioContatoSql>();
             builder.Services.AddScoped<IRepositorioDespesa, RepositorioDespesa>();
 

@@ -4,7 +4,7 @@ using Microsoft.Data.SqlClient;
 
 namespace E_Agenda.Infraestrutura.SqlServer.ModuloCompromisso
 {
-    class RepositorioCompromissoSql : IRepositorioCompromisso
+    public class RepositorioCompromissoSql : IRepositorioCompromisso
     {
         private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=eAgendaDb;Integrated Security=True";
 
